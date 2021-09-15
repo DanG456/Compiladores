@@ -24,9 +24,19 @@ def Automata(estado_inicial):
     cadena_caracter = []
     for caracter in cadena:
         cadena_caracter.append(caracter)
-        #Se comprueba con el metodo que el caracter pertenezca al alfabeto
-    comprobarCaracter(cadena_caracter)
-    asignarTransiciones(tablatrans_limpia)
+    #Se comprueba con el metodo que el caracter pertenezca al alfabeto
+    caracter_valido = comprobarCaracter(cadena_caracter)
+    #Se meten los datos de la tabla de transiciones en un diccionario con las keys Actual, Valor y Siguiente
+    diccionario_tablas = asignarTransiciones(tablatrans_limpia)
+    #Se comienza a analizar la cadena y el camino que debe tomar el automata
+    if (edo_inicial == '0'):
+        for key, value in diccionario_tablas:
+            print(key, value)
+        print("Estado inicial Q0")
+        #for CC in cadena_caracter:
+         #   if(CC == ):
+
+
 
 def comprobarCaracter(caracter):
     for car in caracter:
@@ -57,6 +67,7 @@ def asignarTransiciones(listatransiciones):
             indice_valor = indice_valor + 4
             indice_siguiente = indice_siguiente + 4
 
+    return diccionario
 
 #1.- Guarda la cantidad de estados en un arreglo y la forma en que se denomina a los mismos
 estados = []
@@ -88,8 +99,10 @@ print(linea)
 #print(edo_ini_limpio)
 print(tablatrans)
 print(tablatrans_limpia)
+print(edo_ini_limpio)
 cadena = input("Ingresa la cadena que debe evaluar el autómata")
 Automata(edo_ini_limpio)
 
 f.close()
 f2.close()
+
