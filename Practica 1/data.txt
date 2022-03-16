@@ -1,0 +1,1 @@
+Archivo para hacer las pruebas desde archivos de texto
