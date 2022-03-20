@@ -18,17 +18,17 @@ tokens = reservadas + (
     'PARIZQ',
     'PARDER',
     'SUMA',
-        'RESTA',
-        'MULT',
-        'DIV',
-        'POTENCIA',
-        'MODULO',
-        'CORIZQ',
-        'CORDER',
-        'LLAIZQ',
-        'LLADER',
-        'ENTERO',
-    )
+    'RESTA',
+    'MULT',
+    'DIV',
+    'POTENCIA',
+    'MODULO',
+    'CORIZQ',
+    'CORDER',
+    'LLAIZQ',
+    'LLADER',
+    'ENTERO',
+)
 
 #Expresiones regulares
 
