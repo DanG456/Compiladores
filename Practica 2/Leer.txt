@@ -1,0 +1,1 @@
+Recordar descargar el analizador léxico y ponerlo en la misma carpeta que el analizador sintáctico para que funcione
