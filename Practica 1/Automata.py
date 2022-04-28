@@ -1,5 +1,6 @@
 import re
 import ply.lex as lex
+import os
 
 #Lista de palbras reservadas
 reservadas = (
@@ -28,6 +29,10 @@ tokens = reservadas + (
     'LLAIZQ',
     'LLADER',
     'ENTERO',
+    'ASIGNAR',
+    'PUNTOCOMA',
+    'COMDOBLE',
+    'IDENTIFICADOR',
 )
 
 #Expresiones regulares
@@ -44,6 +49,10 @@ t_LLAIZQ = r'{'
 t_LLADER = r'}'
 t_MODULO = r'\%'
 t_ASIGNAR = r'='
+t_PUNTOCOMA = ';'
+t_COMA = ','
+t_COMDOBLE = r'\"'
+t_POTENCIA = r'(\*{2} | \^)'
 
 #Definición de Reglas
 
@@ -167,9 +176,11 @@ if(estado==3):
     print("""|                Cadena Valida                       |
 +----------------------------------------------------+""")
     lexer.input(cadena)
+    f = open("TokensLex.txt",'w')
     #Tokenizacion
     while True:
         tok = lexer.token()
         if not tok:
             break #Fin a la entrada de información para el analizador
         print(tok)
+        f.write(str(tok) + '\n')
